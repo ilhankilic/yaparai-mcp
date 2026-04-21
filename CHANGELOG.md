@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [0.5.1] — 2026-04-21 (Docs refresh)
+
+### Changed
+- **README overhaul** — full v0.4.0 + v0.5.0 tool tables with per-tool descriptions
+- Added "Release Notes" section with version timeline
+- Clarified org-bound API key workflow: personal vs enterprise scope, setup table
+- Updated Python SDK examples with v0.5.0 `enterprise_*` client methods
+- Added Reliability section (retry, logging, tests, CI) introduced in v0.4.0
+- Tests badge (32 passing), link to new enterprise key page on kurumsal portal
+
+No code changes — package identical to v0.5.0.
+
+---
+
 ## [0.5.0] — 2026-04-21 (Enterprise High Priority)
 
 ### Added (6 new enterprise tools: 37 → 43)
