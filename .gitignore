@@ -14,3 +14,8 @@ venv/
 .vscode/
 *.swp
 *.swo
+
+# Personal notes — not part of the contribution
+PROJE_ANALIZI.md
+KATKI_REHBERI.md
+
