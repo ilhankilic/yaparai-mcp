@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yaparai"
+version = "0.3.1"
+description = "YaparAI MCP Server — Generate images, videos, and music with AI directly from Claude Desktop, Cursor, and Windsurf"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [
+    { name = "Ilhan Kilic", email = "ilhan.kilic@yaparai.com" },
+]
+keywords = ["mcp", "ai", "image-generation", "video-generation", "music-generation", "yaparai", "claude", "cursor"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "fastmcp>=2.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-mock>=3.12",
+    "respx>=0.21",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://www.yaparai.com"
+Documentation = "https://github.com/ilhankilic/yaparai-mcp#readme"
+Repository = "https://github.com/ilhankilic/yaparai-mcp"
+Issues = "https://github.com/ilhankilic/yaparai-mcp/issues"
+
+[project.scripts]
+yaparai = "yaparai.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/yaparai"]
