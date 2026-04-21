@@ -90,6 +90,16 @@ from yaparai.tools.crm import (
     sync_customers_from_inbox,
 )
 
+# --- Enterprise: Competitor Analysis + Product Catalog (v0.5.0) ---
+from yaparai.tools.enterprise import (
+    list_competitors,
+    get_competitor,
+    compare_competitors,
+    list_org_products,
+    create_org_product,
+    update_product_stock,
+)
+
 # --- Utility ---
 from yaparai.tools.balance import check_balance
 from yaparai.tools.models import list_models
@@ -162,6 +172,14 @@ mcp.tool(extract_customer_info)
 mcp.tool(send_shipping_info)
 mcp.tool(bulk_message)
 mcp.tool(sync_customers_from_inbox)
+
+# Enterprise: Competitor Analysis + Product Catalog (v0.5.0) (6)
+mcp.tool(list_competitors)
+mcp.tool(get_competitor)
+mcp.tool(compare_competitors)
+mcp.tool(list_org_products)
+mcp.tool(create_org_product)
+mcp.tool(update_product_stock)
 
 # Utility (3)
 mcp.tool(check_balance)

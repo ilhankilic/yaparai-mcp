@@ -6,6 +6,34 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [0.5.0] — 2026-04-21 (Enterprise High Priority)
+
+### Added (6 new enterprise tools: 37 → 43)
+
+**Competitor Analysis** (Sprint CA)
+- `list_competitors` — list competitors tracked under your org
+- `get_competitor` — detailed info for a single competitor
+- `compare_competitors` — 2–4 competitor KPI snapshots for SWOT/positioning
+
+**Product Catalog** (Sprint AD)
+- `list_org_products` — org product list with SKU, price, category, stock
+- `create_org_product` — add new product with full metadata
+- `update_product_stock` — toggle in_stock / out_of_stock / preorder
+
+### Changed
+- **Org-bound API keys**: API keys can now be bound to an organization on creation
+  (at yaparai.com/settings). When bound, enterprise tools use that org automatically;
+  `YAPARAI_ORG_ID` env var is no longer required.
+- Client gained `enterprise_*` methods that use `/v1/public/enterprise/*` endpoints
+  with automatic `X-Organization-Id` header propagation.
+
+### Backend
+- Migration 0086: `user_api_keys.organization_id` nullable FK
+- New `/v1/public/enterprise/*` route family (12 endpoints incl. inbox + CRM)
+- `get_current_user_and_org` dependency with `UserWithOrg` context wrapper
+
+---
+
 ## [0.4.0] — 2026-04-21
 
 Community contribution by [@enis1998](https://github.com/enis1998).

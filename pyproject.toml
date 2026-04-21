@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "yaparai"
-version = "0.4.0"
+version = "0.5.0"
 description = "YaparAI MCP Server — Generate images, videos, and music with AI directly from Claude Desktop, Cursor, and Windsurf"
 readme = "README.md"
 license = "Apache-2.0"

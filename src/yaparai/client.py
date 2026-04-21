@@ -311,3 +311,73 @@ class YaparAIClient:
         return await self._request(
             "POST", f"/api/enterprise/orgs/{org_id}/crm/sync-from-inbox"
         )
+
+    # ── v0.5.0: Public Enterprise API (API key with org binding) ──
+    # /v1/public/enterprise/* — API key'e bağlı org otomatik kullanılır.
+    # API key kişiselse X-Organization-Id header ile override edilebilir.
+
+    async def enterprise_list_competitors(
+        self, limit: int = 50, offset: int = 0, org_id: str | None = None
+    ) -> dict:
+        """List competitors under the org bound to the API key."""
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "GET",
+            "/v1/public/enterprise/competitors",
+            params={"limit": limit, "offset": offset},
+            headers=headers,
+        )
+
+    async def enterprise_get_competitor(
+        self, competitor_id: str, org_id: str | None = None
+    ) -> dict:
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "GET",
+            f"/v1/public/enterprise/competitors/{competitor_id}",
+            headers=headers,
+        )
+
+    async def enterprise_compare_competitors(
+        self, competitor_ids: list[str], org_id: str | None = None
+    ) -> dict:
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "POST",
+            "/v1/public/enterprise/competitors/compare",
+            json={"competitor_ids": competitor_ids},
+            headers=headers,
+        )
+
+    async def enterprise_list_org_products(
+        self, limit: int = 50, offset: int = 0, org_id: str | None = None
+    ) -> dict:
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "GET",
+            "/v1/public/enterprise/products",
+            params={"limit": limit, "offset": offset},
+            headers=headers,
+        )
+
+    async def enterprise_create_org_product(
+        self, payload: dict, org_id: str | None = None
+    ) -> dict:
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "POST",
+            "/v1/public/enterprise/products",
+            json=payload,
+            headers=headers,
+        )
+
+    async def enterprise_update_product_stock(
+        self, product_id: str, stock_status: str, org_id: str | None = None
+    ) -> dict:
+        headers = {"X-Organization-Id": org_id} if org_id else {}
+        return await self._request(
+            "PATCH",
+            f"/v1/public/enterprise/products/{product_id}/stock",
+            json={"stock_status": stock_status},
+            headers=headers,
+        )

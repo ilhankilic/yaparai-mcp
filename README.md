@@ -8,7 +8,7 @@ All-in-one AI content creation + enterprise social media & CRM — directly from
 
 ## What is YaparAI?
 
-[YaparAI](https://www.yaparai.com) is an all-in-one AI platform with 32 tools:
+[YaparAI](https://www.yaparai.com) is an all-in-one AI platform with 43 tools:
 
 - **Image Generation** — Flux, SDXL, Imagen 4 (text-to-image, image-to-image)
 - **Video Generation** — Veo 3.1, Kling (text-to-video, image-to-video)
@@ -20,6 +20,8 @@ All-in-one AI content creation + enterprise social media & CRM — directly from
 - **Chatbots** — Interact with AI chatbots via API
 - **Social Media** — Post, caption, hashtag, inbox, AI auto-reply (Enterprise)
 - **CRM** — Customer management, AI info extraction, shipping, bulk messaging (Enterprise)
+- **Competitor Analysis** — Track competitors, compare KPIs, SWOT snapshots (Enterprise, v0.5.0)
+- **Product Catalog** — Org product CRUD, stock management (Enterprise, v0.5.0)
 
 ## Quick Start
 
